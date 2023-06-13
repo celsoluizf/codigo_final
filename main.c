@@ -113,7 +113,7 @@ void cadastrar() {
     scanf(" %[^\n]", vetor[ultimo_elemento].hora_sai);
 }
 
-void listar() {
+void listar(){
     for (int i=0;i<=ultimo_elemento;i++){
         printf("\n***RELATÓRIO COMPLETO ID %d ***\n", vetor[i].id);
         printf("\n***dados do animal***\n");
@@ -156,7 +156,7 @@ void buscar(){
     int id;
     printf("Digite o ID da posição: ");
     scanf("%d",&id);
-    int posicao=buscar_posicao(id); //não entendi isso
+    int posicao=buscar_posicao(id);
     if(posicao!=-1){ //-1 porque no int buscar_posicao, se não encontrar a posição, ele retorna -1;
         printf("\n***RELATÓRIO COMPLETO ID %d ***\n", vetor[posicao].id);
         printf("\n***dados do animal***\n");
@@ -196,7 +196,7 @@ void alterar(){
     scanf("%d",&id);
     int posicao=buscar_posicao(id);
     if(posicao!=-1){
-        float total = 0,preco_mat=0; //igualar a 0 para quando o void cadastrar for chamado de novo, os valores estarão em 0
+    float total=0,preco_mat=0; //igualar a 0 para quando o void cadastrar for chamado de novo, os valores estarão em 0
     int num_cirurgia, quant_mat;
     int quantidade=0; //igualar a 0 para quando o void cadastrar for chamado de novo, os valores estarão em 0
     char tipo_animal[30], nome[50], raca[50];
@@ -283,9 +283,9 @@ void excluir(){
     scanf("%d",&id);
     int posicao=buscar_posicao(id);
     if (posicao!=-1){
-        Dados p=vetor[ultimo_elemento];
+        Dados d=vetor[ultimo_elemento];
         vetor[ultimo_elemento]=vetor[posicao];
-        vetor[posicao]=p;
+        vetor[posicao]=d;
         ultimo_elemento--;
         printf("Espaço no ID excluído com sucesso!");
     }else{
@@ -331,7 +331,3 @@ int main(){
     
     return 0;
 }
-
-
-
-
